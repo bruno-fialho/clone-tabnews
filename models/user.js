@@ -24,10 +24,39 @@ async function findOneByUsername(username) {
 
     if (results.rowCount === 0) {
       throw new NotFoundError({
-        name: "NotFoundError",
         message: "O username informado não foi encontrado no sistema.",
         action: "Verifique se o username está digitado corretamente.",
-        statusCode: 404,
+      });
+    }
+
+    return results.rows[0];
+  }
+}
+
+async function findOneById(id) {
+  const userFound = await runSelectQuery(id);
+
+  return userFound;
+
+  async function runSelectQuery(idValue) {
+    const results = await database.query({
+      text: `
+        SELECT
+          *
+        FROM
+          users
+        WHERE
+          id = $1
+        LIMIT
+          1
+        ;`,
+      values: [idValue],
+    });
+
+    if (results.rowCount === 0) {
+      throw new NotFoundError({
+        message: "O ID informado não foi encontrado no sistema.",
+        action: "Verifique se o ID está digitado corretamente.",
       });
     }
 
@@ -57,10 +86,8 @@ async function findOneByEmail(email) {
 
     if (results.rowCount === 0) {
       throw new NotFoundError({
-        name: "NotFoundError",
         message: "O e-mail informado não foi encontrado no sistema.",
         action: "Verifique se o e-mail está digitado corretamente.",
-        statusCode: 404,
       });
     }
 
@@ -194,6 +221,7 @@ async function hashPasswordInObject(userInputValues) {
 const user = {
   create,
   findOneByEmail,
+  findOneById,
   findOneByUsername,
   update,
 };
