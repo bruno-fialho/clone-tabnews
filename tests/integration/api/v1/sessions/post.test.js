@@ -36,7 +36,7 @@ describe("POST /api/v1/sessions", () => {
         name: "UnauthorizedError",
         message: "Dados de autenticação não conferem.",
         action: "Verifique se os dados enviados estão corretos.",
-        statusCode: 401,
+        status_code: 401,
       });
     });
 
@@ -62,7 +62,7 @@ describe("POST /api/v1/sessions", () => {
         name: "UnauthorizedError",
         message: "Dados de autenticação não conferem.",
         action: "Verifique se os dados enviados estão corretos.",
-        statusCode: 401,
+        status_code: 401,
       });
     });
 
@@ -90,7 +90,7 @@ describe("POST /api/v1/sessions", () => {
         name: "UnauthorizedError",
         message: "Dados de autenticação não conferem.",
         action: "Verifique se os dados enviados estão corretos.",
-        statusCode: 401,
+        status_code: 401,
       });
     });
 
