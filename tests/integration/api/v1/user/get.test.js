@@ -86,7 +86,7 @@ describe("GET /api/v1/user", () => {
         name: "UnauthorizedError",
         message: "Usuário não possui sessão ativa.",
         action: "Verifique se este usuário está logado e tente novamente.",
-        statusCode: 401,
+        status_code: 401,
       });
     });
 
@@ -117,7 +117,7 @@ describe("GET /api/v1/user", () => {
         name: "UnauthorizedError",
         message: "Usuário não possui sessão ativa.",
         action: "Verifique se este usuário está logado e tente novamente.",
-        statusCode: 401,
+        status_code: 401,
       });
     });
 

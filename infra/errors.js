@@ -14,7 +14,7 @@ export class InternalServerError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
@@ -35,7 +35,7 @@ export class ServiceError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
@@ -56,7 +56,7 @@ export class ValidationError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
@@ -79,7 +79,7 @@ export class NotFoundError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
@@ -99,7 +99,7 @@ export class MethodNotAllowedError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
@@ -120,7 +120,7 @@ export class UnauthorizedError extends Error {
       name: this.name,
       message: this.message,
       action: this.action,
-      statusCode: this.statusCode,
+      status_code: this.statusCode,
     };
   }
 }
